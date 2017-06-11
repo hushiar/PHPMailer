@@ -12,11 +12,20 @@ if (array_key_exists('email', $_POST)) {
 
     //Create a new PHPMailer instance
     $mail = new PHPMailer;
+    
     //Tell PHPMailer to use SMTP - requires a local mail server
     //Faster and safer than using mail()
     $mail->isSMTP();
-    $mail->Host = 'localhost';
+    // Enable SMTP authentication
+    $mail->SMTPAuth = true;
+    // SMTP server
+    $mail->Host = 'smtp.example.com';   
+    // set the SMTP port for the outMail server        
     $mail->Port = 25;
+    // outMail username        
+    $mail->Username = 'm03f0333';
+    // outMail password
+    $mail->Password = 'qLDr5QA8WJq7xpGf';
 
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
